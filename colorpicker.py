@@ -2,7 +2,6 @@ import pyautogui
 import time
 from pynput import mouse
 import os
-from datetime import datetime
 from PIL import Image
 def on_click(x, y, button, pressed):
     if pressed:
@@ -11,7 +10,6 @@ def on_click(x, y, button, pressed):
 
         r, g, b = color
         img = Image.new('RGB', (300, 300), color=color)
-        now = datetime.now().strftime("%Y%m%d-%H%M%S")
         desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
         filename = f"color {r} {g} {b}.jpg"
         img.save(os.path.join(desktop_path, filename), "JPEG", quality=90)
